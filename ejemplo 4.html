@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function iniciar() {
+            nombre1 = document.getElementById("nombre");
+            nombre2 = document.getElementById("apellido");
+            nombre1.addEventListener("input", validacion,false);
+            nombre2.addEventListener("input", validacion, false);
+            validacion();
+        }
+
+        function validacion() {
+
+            if(nombre1.value=='' && nombre2.value=='edgar'){
+                nombre1.setCustomValidity('inserte al menos un nombre');
+                nombre1.style.background='#FFFFF';
+            }
+        }
+        window.addEventListener("load",iniciar, false);
+    </script>
+</head>
+<body class="btn-danger">
+<section>
+    <form name="registracion" method="get">
+        Nombre: <input type="text" name="nombre" id="nombre">
+        Apellido: <input type="text" name="apellido" id="apellido">
+        <input type="submit" id="send" value="ingresar">
+    </form>
+</section>
+
+<form action="prueba.html">
+    <input type="submit" class="btn-success" value="Ejercicio1">
+</form>
+
+</body>
+</html>

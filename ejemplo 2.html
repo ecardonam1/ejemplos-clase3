@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-success">
+<section>
+    <form name="miformulario" id="miformulario" method="get" autocomplete="on">
+    email    <input type="email" name="miemail" id="miemail" required>
+        email2    <input type="email" name="miemail2" id="miemail2" multiple>
+     url   <input type="url" name="miurl" id="miurl">
+       busqueda <input type="search" name="misearch" id="misearch" placeholder="escriba su busqueda" autofocus>
+       telefono <input type="tel" name="telefono" id="telefono">
+      numero  <input type="number" name="numero" min="0" max="10" step="5">
+      fecha  <input type="date" name="fecha" id="fecha">
+      semana  <input type="week" name="semana" id="semana">
+      mes  <input type="month" name="mes" id="mes">
+      tiempo  <input type="time" name="hora" id="hora">
+      date time  <input type="datetime" name="fechahora" id="fechahora">
+      tiempo local   <input type="datetime-local" name="tiempolocal" id="tiempolocal">
+      color  <input type="color" name="color" id="color">
+       patron <input pattern="[0-9]{5}" name="codigopostal" id="codigopostal"
+               title="inserte los 5 numeros de su codigo postal">
+        <input type="submit" value="Enviar">
+    </form>
+</section>
+
+<form action="prueba.html">
+    <input type="submit" class="btn-success" value="Ejercicio1">
+</form>
+</body>
+</html>

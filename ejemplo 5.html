@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function iniciar() {
+            edad=document.getElementById("miedad");
+            edad.addEventListener("change",cambiarrango,false);
+            document.informacion.addEventListener("invalid",validacion(),true);
+            document.getElementById("enviar").addEventListener("click",enviar,false);
+
+
+        }
+
+        function cambiarrango() {
+            var salida=document.getElementById("rango");
+            var calc=edad.value-20;
+            if(calc<20){
+                calc=0;
+                edad.value=20;
+            }
+            salida.innerHTML=calc+' a '+edad.value;
+
+
+        }
+
+        function validacion(e) {
+            var elemento=e.target;
+            elemento.style.background='#FFDDDD';
+        }
+
+        function enviar() {
+            var valido=document.informacion.checkValidity();
+            if (valido){
+                document.informacion.submit();
+            }
+
+        }
+
+        window.addEventListener("load",inicia,false);
+    </script>
+</head>
+<body class="bg-light">
+<section>r
+    <form name="informacion" method="get">
+        Usuario: <input pattern="[A-Za-z]{3,}" name="usuario" id="usuario"
+    maxlength="10" required>
+        Email: <input type="email" name="miemail" id="miemail" required>
+        Rango de Edad: <input type="range" name="miedad" id="miedad" min="0"
+    max="80" step="20" value="20">
+        <output id="rango"> 0 a 20</output>
+        <input type="button" class="btn-success" id="enviar" value="ingresar">
+    </form>
+</section>
+
+<form action="prueba.html">
+    <input type="submit" class="btn-success" value="Ejercicio1">
+</form>
+
+</body>
+</html>
